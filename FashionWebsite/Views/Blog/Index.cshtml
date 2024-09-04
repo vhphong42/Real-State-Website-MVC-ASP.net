@@ -1,0 +1,196 @@
+﻿@using FashionWebsite.Models;
+@{
+    ViewBag.Title = "Index";
+	BaiViet list = (BaiViet)ViewData["dsbv"];
+}
+<div class="main-content w-100 float-left blog-detail"> 
+		<div class="container">
+			<div class="row">
+				<div class="products-grid col-xl-9 col-lg-9 order-lg-2 blog-details">
+					<div class="row">
+					@{ 
+                        
+                                            <div class="ttblog col-sm-12 col-xs-12 float-left">
+                                                <div class="item">
+                                                    <div class="ttblog_image_holder">
+                                                        <a href="#">
+                                                            <img src="@list.hinhDD" alt="blog-01">
+                                                        </a>
+                                                    </div>
+                                                    <div class="blog-content-wrap">
+                                                        <div class="blog_inner">
+                                                            <h4 class="blog-title">@list.tenBV</h4>
+                                                            <div class="post-info d-flex">
+                                                                <span class="author d-flex"><i class="material-icons">perm_identity</i><span>@list.taiKhoan</span></span>
+                                                                <span class="date d-flex"><i class='material-icons'>date_range</i><span>@list.ngayDang</span></span>
+                                                                <span class="article d-flex"><i class='material-icons'>folder</i><span>categories</span></span>
+                                                            </div>
+                                                            <div class="blog-desc">
+                                                                <blockquote>@list.ndTomTat</blockquote>
+																	@Html.Raw(list.noiDung) 
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                        
+					}
+					
+	<div class="post-comment-area pt-90 scroll-area col-sm-12 col-xs-12">
+                            <h4 class="post-title">3 comments</h4>
+                            <div class="post-comment-container">
+                                <div class="single-post-comment float-left w-100">
+                                    <div class="single-post-image float-left">
+                                        <img src="~/Content/img/logos/author.jpg" alt="">
+                                    </div>
+                                    <div class="single-post-content">
+                                        <div class="single-post-info float-left">
+                                            <a href="#">admin</a>
+                                            <span>October 6, 2018 at 1:38 am</span>
+                                            <p>just a nice post</p>
+                                        </div>
+                                        <button type="button" class="float-right btn-primary btn">reply</button>
+                                    </div>
+                                </div>
+                                <div class="single-post-comment float-left w-100">
+                                    <div class="single-post-image float-left">
+                                        <img src="~/Content/img/logos/author.jpg" alt="">
+                                    </div>
+                                    <div class="single-post-content">
+                                        <div class="single-post-info float-left">
+                                            <a href="#">demo</a>
+                                            <span>October 6, 2018 at 1:38 am</span>
+                                            <p>Quisque semper nunc vitae erat pellentesque, ac placerat arcu consectetur</p>
+                                        </div>
+                                        <button type="button" class="float-right btn-primary btn">reply</button>
+                                    </div>
+                                </div>
+                                <div class="single-post-comment float-left w-100">
+                                    <div class="single-post-image float-left">
+                                        <img src="~/Content/img/logos/author.jpg" alt="">
+                                    </div>
+                                    <div class="single-post-content">
+                                        <div class="single-post-info float-left">
+                                            <a href="#">admin</a>
+                                            <span>October 6, 2018 at 1:38 am</span>
+                                            <p>Quisque orci nibh, porta vitae sagittis sit amet, vehicula vel mauris. Aenean at justo dolor. Fusce ac sapien bibendum, scelerisque libero nec</p>
+                                        </div>
+                                        <button type="button" class="float-right btn-primary btn">reply</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						<form action="#" class="post-comment-form col-sm-12">
+                            <h4 class="post-title">Leave a Reply</h4>
+                            <p>Your email address will not be published. Required fields are marked *</p>
+ 									<div class="row">
+                                <div class="col-lg-4">
+                                    <label for="post-name">Name <span class="required">*</span></label>
+                                    <input type="text" id="post-name" class="w-100" required>
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="post-email">Email <span class="required">*</span></label>
+                                    <input type="email" id="post-email" class="w-100" required>
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="post-website">Website</label>
+                                    <input type="text" id="post-website" class="w-100" required>
+                                </div>
+                            </div>
+							                           <label for="post-text">Comment</label>
+                            <textarea name="post-comment" id="post-text" cols="30" rows="10" class="w-100"></textarea>
+                            
+                            <button type="submit" class="default-btn btn-primary btn">post comment</button>
+                        </form>
+					</div>
+				</div>
+							<div class="sidebar col-xl-3 col-lg-3 order-lg-1">
+					<div class="sidebar-blog left-sidebar w-100 float-left">
+					<div class="title">
+					<a data-toggle="collapse" href="#sidebar-blog" aria-expanded="false" aria-controls="sidebar-blog" class="d-lg-none block-toggler">Recent Posts</a>
+					</div>
+					<h3 class="widget-title text-capitalize">recent posts</h3>
+					<div id="sidebar-blog" class="">
+						<div class="ttblog w-100 float-left">
+							<div class="item">
+								<div class="ttblog_image_holder col-sm-4 float-left">
+									<a href="#">
+										<img src="~/Content/img/banner/blog-01.jpg" alt="blog-01">							</a>
+									</div>
+								<div class="blog-content-wrap col-sm-8 float-right">
+								<div class="blog_inner">
+									<h4 class="blog-title">Share the Love</h4>
+									<div class="post-info d-flex">
+									<span class="date d-flex"><i class="material-icons">date_range</i><span>12 june 2019</span></span>
+									</div>
+								</div>
+								</div>
+							</div>
+							</div>
+							<div class="ttblog w-100 float-left">
+					<div class="item">
+						<div class="ttblog_image_holder col-sm-4 float-left">
+							<a href="#">
+								<img src="~/Content/img/banner/blog-02.jpg" alt="blog-02">							</a>
+													</div>
+						<div class="blog-content-wrap col-sm-8 float-right">
+						<div class="blog_inner">
+							<h4 class="blog-title">Upon of seasons earth</h4>
+							<div class="post-info d-flex">
+			<span class="date d-flex"><i class="material-icons">date_range</i><span>12 june 2019</span></span>
+			</div>
+						</div>
+						</div>
+					</div>
+					</div>
+					</div>
+					</div>
+					<div class="sidebar-categories left-sidebar w-100 float-left">
+					<div class="title">
+					<a data-toggle="collapse" href="#sidebar-categories" aria-expanded="false" aria-controls="sidebar-categories" class="d-lg-none block-toggler">Recent Posts</a>
+					</div>
+					<h3 class="widget-title text-capitalize">blog categories</h3>
+					<div id="sidebar-categories" class="">
+						<ul class="list">
+							<li><a href="#">fashion trends</a></li>
+							<li><a href="#">features</a></li>
+							<li><a href="#">latest style</a></li>
+							<li><a href="#">beauty & makeup</a></li>
+						</ul>
+					</div>
+					</div>
+					<div class="sidebar-tags left-sidebar w-100 float-left">
+					<div class="title">
+					<a data-toggle="collapse" href="#sidebar-tags" aria-expanded="false" aria-controls="sidebar-tags" class="d-lg-none block-toggler">Recent Posts</a>
+					</div>
+					<h3 class="widget-title text-capitalize">blog tags</h3>
+					<div id="sidebar-tags" class="">
+					<ul class="list">
+							<li><a href="#">fashion</a></li>
+							<li><a href="#">cosmetic</a></li>
+							<li><a href="#">shoes</a></li>
+							<li><a href="#">beauty</a></li>
+							<li><a href="#">makeup</a></li>
+							<li><a href="#">accessories</a></li>
+						</ul>
+					</div>
+					</div>
+					<div class="sidebar-archive left-sidebar w-100 float-left">
+					<div class="title">
+					<a data-toggle="collapse" href="#sidebar-archive" aria-expanded="false" aria-controls="sidebar-archive" class="d-lg-none block-toggler">Recent Posts</a>
+					</div>
+					<h3 class="widget-title text-capitalize">archive</h3>
+					<div id="sidebar-archive" class="">
+					<ul class="list">
+							<li><a href="#">june 2019</a></li>
+							<li><a href="#">january 2019</a></li>
+							<li><a href="#">february 2018</a></li>
+						</ul>
+					</div>
+					</div>
+					</div>
+
+			</div>
+		</div>
+		</div>

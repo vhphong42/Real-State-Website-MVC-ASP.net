@@ -1,0 +1,107 @@
+﻿@using FashionWebsite.Models;
+@model FashionWebsite.Models.LoaiSP
+
+
+@{
+    ViewBag.Title = "Index";
+    List<LoaiSP> list = ViewData["DSLoai"] as List<LoaiSP>;
+}
+
+<style>
+    form{
+        display :inline;
+    }
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Danh sách hàng mới đặt</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example2" class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Mã Loại </th>
+                                <th>Tên Loại Hàng</th>
+                                <th>Số Sản Phẩm</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (LoaiSP i in list)
+                            {
+                                <tr>
+                                    <td>@i.maLoai</td>
+                                    <td>
+                                        @i.tenLoai
+                                    </td>
+                                    <td>@i.SanPhams.Where(x => x.maLoai == i.maLoai).Count() Sản Phẩm</td>
+                                    <td>
+                                        @using (Html.BeginForm("Delete", "LoaiSP", FormMethod.Post))
+                                        {
+                                            <input type="hidden" name="ml" value="@i.maLoai" />
+                                            <button class="btn btn-danger">Xóa</button>
+                                        }
+                                        @using (Html.BeginForm("Update", "LoaiSP", FormMethod.Post))
+                                        {<input type="hidden" name="mlsc" value="@i.maLoai" />
+
+                                            <button class="btn btn-success">Chỉnh sửa </button>
+
+                                        }
+
+                                    </td>
+                                </tr>
+
+                            }
+
+
+                        </tbody>
+
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+        </div>
+        <div class="col-md-6">
+            @using (Html.BeginForm("Index", "LoaiSP", FormMethod.Post))
+            {
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Thông tin chính</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label>Loại sản phẩm </label>
+                                @Html.TextBoxFor(m => m.tenLoai, new { @class="form-control", @placeholder="Enter ..."})
+                            </div>
+                            <div class="form-group">
+                                <label> Nội dung tóm tắt</label>
+                                @Html.TextAreaFor(m => m.tenLoai, new { @class = "form-control", @rows = "3" , @placeholder = "Enter ..." })
+
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                        <!-- /.card-body -->
+
+                </div>
+                @Html.HiddenFor(x => x.maLoai)
+            }
+
+        </div>
+    </div>
+
+</div>

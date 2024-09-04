@@ -1,0 +1,141 @@
+﻿@using FashionWebsite.Models;
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="main-content w-100 float-left blog-list">
+    <div class="container">
+        <div class="row">
+            <div class="products-grid col-xl-9 col-lg-9 order-lg-2">
+                <div class="row">
+                    
+                    @{
+                        foreach (SanPham k in Commnon.getProduct())
+                        {
+                            <div class="ttblog">
+                                <div class="item">
+                                    <div class="ttblog_image_holder col-sm-6 float-left">
+                                        <a href="#">
+                                            <img src="@k.hinhDD" alt="blog-01">
+                                        </a>
+                                        <span class="blogicons">    
+                                            <a title="Click to view Full Image" href="img/banner/blog-01.jpg" data-lightbox="example-set" class="icon zoom"><i class="material-icons">search</i></a>
+                                        </span>
+                                    </div>
+                                    <div class="blog-content-wrap col-sm-6 float-left">
+                                        <div class="blog_inner">
+                                            <h4 class="blog-title"><a href="product-details.html">@k.tenSP</a></h4>
+                                            <div class="post-info d-flex">
+                                                <span class="author d-flex"><i class="material-icons">perm_identity</i><span>@k.taiKhoan</span></span>
+                                                <span class="date d-flex"><i class="material-icons">date_range</i><span>@k.ngayDang</span></span>
+                                                <span class="article d-flex"><i class="material-icons">folder</i><span>categories</span></span>
+                                            </div>
+                                            <div class="blog-desc">@k.ndTomTat </div>
+                                            <div class="read-more text-capitalize">
+                                                <a title="Click to view Read More" class="readmore btn-primary btn">read more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        }
+
+                    }
+
+
+
+
+
+                </div>
+            </div>
+            <div class="sidebar col-xl-3 col-lg-3 order-lg-1">
+                <div class="sidebar-blog left-sidebar w-100 float-left">
+                    <div class="title">
+                        <a data-toggle="collapse" href="#sidebar-blog" aria-expanded="false" aria-controls="sidebar-blog" class="d-lg-none block-toggler">Recent Posts</a>
+                    </div>
+                    <h3 class="widget-title text-capitalize">recent posts</h3>
+                    <div id="sidebar-blog" class="">
+                        <div class="ttblog w-100 float-left">
+                            <div class="item">
+                                <div class="ttblog_image_holder col-sm-4 float-left">
+                                    <a href="#">
+                                        <img src="~/Content/img/maxresdefault.jpg"  alt="blog-01">
+                                    </a>
+                                </div>
+                                <div class="blog-content-wrap col-sm-8 float-right">
+                                    <div class="blog_inner">
+                                        <h4 class="blog-title">Share the House</h4>
+                                        <div class="post-info d-flex">
+                                            <span class="date d-flex"><i class="material-icons">date_range</i><span>12 june 2019</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ttblog w-100 float-left">
+                            <div class="item">
+                                <div class="ttblog_image_holder col-sm-4 float-left">
+                                    <a href="#">
+                                        <img src="~/Content/img/luxury-apartments-living-spase-90.jpg" alt="blog-02">
+                                    </a>
+                                </div>
+                                <div class="blog-content-wrap col-sm-8 float-right">
+                                    <div class="blog_inner">
+                                        <h4 class="blog-title">Best of seasons </h4>
+                                        <div class="post-info d-flex">
+                                            <span class="date d-flex"><i class="material-icons">date_range</i><span>12 june 2019</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-categories left-sidebar w-100 float-left">
+                    <div class="title">
+                        <a data-toggle="collapse" href="#sidebar-categories" aria-expanded="false" aria-controls="sidebar-categories" class="d-lg-none block-toggler">Recent Posts</a>
+                    </div>
+                    <h3 class="widget-title text-capitalize">blog categories</h3>
+                    <div id="sidebar-categories" class="">
+                        <ul class="list">
+                            <li><a href="#">fashion trends</a></li>
+                            <li><a href="#">features</a></li>
+                            <li><a href="#">latest style</a></li>
+                            <li><a href="#">beauty & makeup</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sidebar-tags left-sidebar w-100 float-left">
+                    <div class="title">
+                        <a data-toggle="collapse" href="#sidebar-tags" aria-expanded="false" aria-controls="sidebar-tags" class="d-lg-none block-toggler">Recent Posts</a>
+                    </div>
+                    <h3 class="widget-title text-capitalize">blog tags</h3>
+                    <div id="sidebar-tags" class="">
+                        <ul class="list">
+                            <li><a href="#">Property</a></li>
+                            <li><a href="#">cosmetic</a></li>
+                            <li><a href="#">penthouse</a></li>
+                            <li><a href="#">villa</a></li>
+                            <li><a href="#">House</a></li>
+                            <li><a href="#">accessories</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sidebar-archive left-sidebar w-100 float-left">
+                    <div class="title">
+                        <a data-toggle="collapse" href="#sidebar-archive" aria-expanded="false" aria-controls="sidebar-archive" class="d-lg-none block-toggler">Recent Posts</a>
+                    </div>
+                    <h3 class="widget-title text-capitalize">archive</h3>
+                    <div id="sidebar-archive" class="">
+                        <ul class="list">
+                            <li><a href="#">june 2019</a></li>
+                            <li><a href="#">january 2019</a></li>
+                            <li><a href="#">february 2018</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

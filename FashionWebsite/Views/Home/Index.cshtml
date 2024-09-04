@@ -1,0 +1,297 @@
+﻿@using FashionWebsite.Models; 
+
+@{
+    ViewBag.Title = "Index";
+    SanPham i = ViewData["SpCanXem"] as SanPham;    
+}
+
+<main>
+    
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="slider-wrapper my-40 my-sm-25 float-left w-100">
+        <div class="container">
+
+            <div class="slider slider-for owl-carousel">
+                <div>
+                    <a href="#">
+                        <img src="~/Content/img/realestate1.jpg"  alt="" height="800" width="1600" />
+                    </a>
+                    <div class="slider-content-wrap center effect_top">
+                        <div class="slider-title mb-20 text-capitalize float-left w-100">our specials</div>
+                        <div class="slider-subtitle mb-50 text-capitalize float-left w-100">Real state</div>
+                        <div class="slider-button text-uppercase float-left w-100"><a href='@Url.Action("Index", "ListSanPham")'>Shop Now</a></div>
+                    </div>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="~/Content/img/pedro-lastra-Nyvq2juw4_o-unsplash.jpg"  />
+                    </a>
+                    <div class="slider-content-wrap center effect_bottom">
+                        <div class="slider-title mb-20 text-capitalize float-left w-100">about us</div>
+                        <div class="slider-subtitle mb-50 text-capitalize float-left w-100">Property</div>
+                        <div class="slider-button text-uppercase float-left w-100"><a href='@Url.Action("Index", "Home")'>Shop Now</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div id="ttcmsbanner" class="ttcmsbanner my-40 my-sm-25">
+            <div class="ttbannerblock container text-center">
+                <div class="row">
+                    <div class="ttbanner1 ttbanner col-sm-6 col-xs-6 left-to-right hb-animate-element">
+                        <div class="ttbanner-img"><a href="#"><img src="~/Content/img/CRE-Vs-Strock-Market-Header.jpg" alt="cms-01" height="600" width="630"></a></div>
+                        <div class="ttbanner-inner d-inline-block align-top float-none">
+                            <div class="ttbanner-desc float-left w-100">
+                                <h2 class="ttbanner-heading text-uppercase float-left w-100">Hired<h2>
+                                <span class="title text-uppercase float-left w-100 pb-3">collection</span>
+                                <span class="subtitle float-left w-100 py-20">Et harum quidem rerum facilis est et expedita m libero tempore, cum solut</span>
+                                <span class="shop-now float-left w-100"><a href='@Url.Action("Index", "ListSanPham")' class="d-inline-block align-top float-none btn-primary">Shop Now</a></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ttbanner2 ttbanner col-sm-6 col-xs-6 right-to-left hb-animate-element">
+                        <div class="ttbanner-img"><a href="#"><img  src="~/Content/img/c56c3f6a-b333-46d9-871c-30ef3cc69fb9f205d5ef-2a26-44dc-9390-5ae9a58a35d6960x0-4.jpg"  alt="cms-02" height="600" width="630"></a></div>
+                        <img/>
+                        <div class="ttbanner-inner d-inline-block align-top float-none">
+                            <div class="ttbanner-desc">
+                                <h2 class="ttbanner-heading text-uppercase">Apartment</h2>
+                                <span class="title text-uppercase float-left w-100 pb-3">collection</span>
+                                <span class="subtitle float-left w-100 py-20">Et harum quidem rerum facilis est et expedita m libero tempore, cum solut</span>
+                                <span class="shop-now float-left w-100"><a href='@Url.Action("Index", "ListSanPhamMan")' class="d-inline-block align-top float-none btn-primary">Shop Now</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="main">
+
+            <div id="ttcmstestimonial" class="my-40 my-sm-25 bottom-to-top hb-animate-element">
+                <div class="tttestimonial-content container">
+                    <div class="tttestimonial-inner">
+                        <div class="tttestimonial owl-carousel">
+                            <div>
+                                <div class="testimonial-block">
+                                    <div class="testimonial-image"><img alt="" src="~/Content/img/banner/user1.jpg" height="120" width="120" /></div>
+                                    <div class="testimonial-content">
+                                        <div class="testimonial-desc">
+                                            <p>
+                                                Duis faucibus enim vitae nunc molestie, nec facilisis arcu pulvinar. Nullam mattis arcu convallis, bibendum dui ac, laoreet est.Vivamus interdum egastas rutrum. Quisque laoreet ante sed placerat imperdiet.
+                                            </p>
+                                        </div>
+                                        <div class="testimonial-user-title">
+                                            <h4>John Duff</h4>
+                                            <div class="user-designation">CEO</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="testimonial-block">
+                                    <div class="testimonial-image"><img alt="" src="~/Content/img/banner/user2.jpg" height="120" width="120" /></div>
+                                    <div class="testimonial-content">
+                                        <div class="testimonial-desc">
+                                            <p>
+                                                Duis faucibus enim vitae nunc molestie, nec facilisis arcu pulvinar. Nullam mattis arcu convallis, bibendum dui ac, laoreet est.Vivamus interdum egastas rutrum. Quisque laoreet ante sed placerat imperdiet.
+                                            </p>
+                                        </div>
+                                        <div class="testimonial-user-title">
+                                            <h4>Nazli dof</h4>
+                                            <div class="user-designation">Marketing Manager</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="testimonial-block">
+                                    <div class="testimonial-image"><img alt="" src="~/Content/img/banner/user3.jpg" height="120" width="120" /></div>
+                                    <div class="testimonial-content">
+                                        <div class="testimonial-desc">
+                                            <p>
+                                                Duis faucibus enim vitae nunc molestie, nec facilisis arcu pulvinar. Nullam mattis arcu convallis, bibendum dui ac, laoreet est.Vivamus interdum egastas rutrum. Quisque laoreet ante sed placerat imperdiet.
+                                            </p>
+                                        </div>
+                                        <div class="testimonial-user-title">
+                                            <h4>Aly Vefa</h4>
+                                            <div class="user-designation">Sales Exuctive</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="ttcmssubbanner" class="ttcmssubbanner my-40 my-sm-25 bottom-to-top hb-animate-element">
+                <div class="ttbannerblock container">
+                    <div class="row">
+                        <div class="ttbanner1 ttbanner col-sm-6 col-xs-6">
+                            <div class="ttbanner-img"><a href="#"><img  src="~/Content/img/skyline-sunrise-skysrcaper-city-chicago-realtor-realty-property-buy-immobilien-makler.jpg" alt="cms-03" height="600" width="400"></a></div>
+                            
+                            <div class="ttbanner-inner">
+                                <div class="ttbanner-desc text-center">
+                                    <span class="title text-uppercase">Hired</span>
+                                    <span class="subtitle text-uppercase py-20">up to 70% off</span>
+                                    <span class="shop-now text-capitalize"><a href='@Url.Action("Index", "ListSanPham")' class="btn-primary">shop now</a></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ttbanner2 ttbanner col-sm-6">
+                            <div class="ttbanner-img"><a href="#"><img  src="~/Content/img/1665163875051.jpg"alt="cms-04" height="600" width="400"></a></div>
+                            <div class="ttbanner-inner">
+                                <div class="ttbanner-desc text-center">
+                                    <span class="title text-uppercase">Apartment </span>
+                                    <span class="subtitle text-uppercase py-20">up to 70% off</span>
+                                    <span class="shop-now text-capitalize"><a href='@Url.Action("Index", "ListSanPhamMan")'class="btn-primary">shop now</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="ttspecial" class="ttspecial my-40 bottom-to-top hb-animate-element">
+                <div class="container">
+                    <div class="row">
+                        <div class="tt-title d-inline-block float-none w-100 text-center">special products</div>
+                        <div class="ttspecial-content products grid owl-carousel">
+                            @{
+                                foreach (SanPham k in Commnon.getProduct())
+                                {
+                                    int x = (int)(k.giaBan - 10);
+                                    <div class="product-layouts">
+                                        <div class="product-thumb">
+                                            <div class="image zoom">
+                                                <a href='@Url.Action("Index", "Shop" , new { maSP = k.maSP})'>
+                                                    <img src="@k.hinhDD" alt="01" height="501" width="385" />
+                                                    <img src="@k.hinhDD" alt="02" class="second_image img-responsive" height="501" width="385" />
+                                                </a>
+
+                                            </div>
+                                            <div class="thumb-description">
+                                                <div class="caption">
+                                                    <h4 class="product-title text-capitalize"><a href="product-details.html">@k.tenSP</a></h4>
+                                                </div>
+                                                <div class="rating">
+                                                    <div class="product-ratings d-inline-block align-middle">
+                                                        <span class="fa fa-stack"><i class="material-icons">star</i></span>
+                                                        <span class="fa fa-stack"><i class="material-icons">star</i></span>
+                                                        <span class="fa fa-stack"><i class="material-icons">star</i></span>
+                                                        <span class="fa fa-stack"><i class="material-icons off">star</i></span>
+                                                        <span class="fa fa-stack"><i class="material-icons off">star</i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="price">
+                                                    <div class="regular-price">@x</div>
+                                                    <div class="old-price">
+                                                        @k.giamGia
+                                                    </div>
+                                                </div>
+                                                <div class="button-wrapper">
+                                                    <div class="button-group text-center">
+                                                        @using (Html.BeginForm("AddToCart", "Home", FormMethod.Post))
+                                                        {
+                                                            <input name="maSP" type="hidden" value="@k.maSP" />
+                                                            <button class="ajax-add-to-cart btn btn-primary btn-cart"><i class="material-icons">shopping_cart</i>Add To Cart</button>
+                                                        }
+                                                        <a href="wishlist.html" class="btn btn-primary btn-wishlist"><i class="material-icons">favorite</i><span>wishlist</span></a>
+                                                        <button type="button" class="btn btn-primary btn-compare"><i class="material-icons">equalizer</i><span>Compare</span></button>
+                                                        <button type="button" class="btn btn-primary btn-quickview" data-toggle="modal" data-target="#product_view"><i class="material-icons">visibility</i><span>Quick View</span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="ttsmartblog" class="my-40 my-sm-25 bottom-to-top hb-animate-element">
+                <div class="tt-title d-inline-block float-none w-100 text-center text-capitalize">latest news</div>
+                <div class="container">
+                    <div class="row">
+                        <div class="smartblog-content owl-carousel">
+                            @{
+                                foreach (BaiViet k in Commnon.GetBaiViets(3))
+                                {
+                                    <div class="ttblog">
+                                        <div class="item">
+                                            <div class="ttblog_image_holder">
+                                                <a href='@Url.Action("Index", "Blog" , new { maBV = k.maBV})'>
+                                                    <img src="@k.hinhDD" alt="blog-01" width="415" height="269">
+                                                </a>
+                                                <span class="blogicons">
+                                                    <a title="Click to view Full Image" href="@k.hinhDD" data-lightbox="example-set" class="icon zoom"><i class="material-icons">search</i></a>
+                                                </span>
+                                            </div>
+                                            <div class="blog-content-wrap float-left w-100">
+                                                <div class="blog_inner">
+                                                    <h4 class="blog-title"><span>@k.tenBV</span></h4>
+                                                    <div class="blog-desc">@k.ndTomTat</div>
+                                                    <div class="read-more text-capitalize">
+                                                        <a title="Click to view Read More" class="readmore">read more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+
+
+                        </div>
+                    </div>
+                </div>
+                <div id="ttbrandlogo" class="my-40 my-sm-25 bottom-to-top hb-animate-element">
+                    <div class="container">
+                        <div class="tt-brand owl-carousel">
+                            <div class="item">
+                                <a href="#"><img src="~/Content/img/logos/brand-logo-01.png" alt="brand-logo-01" width="140" height="100"></a>
+                            </div>
+                            <div class="item">
+                                <a href="#"><img src="~/Content/img/logos/brand-logo-02.png" alt="brand-logo-02" width="140" height="100"></a>
+                            </div>
+                            <div class="item">
+                                <a href="#"><img src="~/Content/img/logos/brand-logo-03.png" alt="brand-logo-03" width="140" height="100"></a>
+                            </div>
+                            <div class="item">
+                                <a href="#"><img src="~/Content/img/logos/brand-logo-04.png" alt="brand-logo-04" width="140" height="100"></a>
+                            </div>
+                            <div class="item">
+                                <a href="#"><img src="~/Content/img/logos/brand-logo-05.png" alt="brand-logo-05" width="140" height="100"></a>
+                            </div>
+                            <div class="item">
+                                <a href="#"><img src="~/Content/img/logos/brand-logo-06.png" alt="brand-logo-06" width="140" height="100"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $(document).ready(function () {
+            $("ajax-add-to-cart").click(function () {
+                $.ajax({
+                    success: function (data) {
+                        console.log(data);
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Add To Cart Success',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                });
+            });
+
+        });
+    </script>
+</main>

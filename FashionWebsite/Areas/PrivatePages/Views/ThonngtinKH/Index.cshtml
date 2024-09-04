@@ -1,0 +1,50 @@
+﻿@using FashionWebsite.Models;
+@{
+    ViewBag.Title = "Index";
+    CartShop x = ViewData["Cart"] as CartShop;
+
+}
+
+    <table id="example2" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Mã Khách Hàng</th>
+                <th>Số điện thoại</th>
+                <th>Tên khách hàng </th>
+                <th>Giới tính</th>
+                <th>Địa chỉ</th>
+                <th>Ghi Chú </th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (KhachHang i in Commnon.getKhachHang())
+            {
+                <tr>
+                    <td>@i.maKH</td>
+                    <td>
+                        @i.soDT
+                    </td>
+                    <td>@i.tenKH</td>
+                    <td> @i.gioiTinh</td>
+                    <td>@i.diaChi</td>
+                    <td>@i.ghiChu</td>
+                    <td>@i.email</td>
+                </tr>
+            }
+
+
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Rendering engine</th>
+                <th>Browser</th>
+                <th>Platform(s)</th>
+                <th>Engine version</th>
+                <th>CSS grade</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+

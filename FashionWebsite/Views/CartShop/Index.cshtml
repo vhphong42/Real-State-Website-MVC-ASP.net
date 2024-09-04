@@ -1,0 +1,98 @@
+﻿@using FashionWebsite.Models
+@{
+    ViewBag.Title = "Index";
+    CartShop x = ViewData["Cart"] as CartShop;
+}
+
+<div class="cart-area table-area pt-110 pb-95 float-left w-100">
+    <div class="container">
+        <div class="row" >
+            <div class="col-lg-8 col-md-12 col-sm-12 float-left cart-wrapper">
+                <div class="table-responsive">
+                    <table class="table product-table text-center">
+                        <thead>
+                            <tr>
+                                <th class="table-remove text-capitalize">remove</th>
+                                <th class="table-image text-capitalize">image</th>
+                                <th class="table-p-name text-capitalize">product</th>
+                                <th class="table-p-price text-capitalize">price</th>
+                                <th class="table-p-qty text-capitalize">quantity</th>
+                                <th class="table-total text-capitalize">total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                foreach( CtDonHang i in x.SanPhamDC.Values)
+                                {
+                                    <tr>
+                                        <td class="table-remove">
+                                             @using (Html.BeginForm("RemoveItem", "CartShop", FormMethod.Post))
+                                                {
+                                                    <input type="hidden" name="maSP" value="@i.maSP" />
+                                                    <button><i class="material-icons">delete</i></button>
+                                                }
+                                        </td>
+                                        <td class="table-image"><a href="product-details.html"><img src="@Commnon.getImageOfProductByID(i.maSP)"></a></td>
+                                        <td class="table-p-name text-capitalize"><a href="@Commnon.getNameOfProductByID(i.maSP)">@i.maSP</a></td>
+                                        <td class="table-p-price"><p>@string.Format("{0:#.##0 $}",i.giaBan)</p></td>
+                                        <td class="table-p-qty">
+                                            <div style="display:inline-flex" class="table-p-qty-button">
+                                                <input value="@i.soLuong">
+                                                @using (Html.BeginForm("Decrease", "CartShop", FormMethod.Post))
+                                                {
+                                                    <input type="hidden" name="maSP" value="@i.maSP" />
+                                                    <button style="margin-top: 10px; border: none; cursor: pointer" class="btn-default">-</button>
+                                                }
+                                                @using (Html.BeginForm("Increase", "CartShop", FormMethod.Post))
+                                                {
+                                                    <input type="hidden" name="maSP" value="@i.maSP" />
+                                                    <button style=" margin-top: 10px; border: none; cursor:pointer" class="btn-default">+</button>
+                                                }
+                                            </div>
+                                        </td>
+                                        <td class="table-total"><p>@x.moneyOfOneProduct(i)</p></td>
+                                 </tr>
+                                }
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-bottom-wrapper">
+                    <div class="table-coupon d-flex d-xs-block d-lg-flex d-sm-flex fix justify-content-start float-left">
+                        <input type="text" placeholder="Coupon code">
+                        <button type="submit" class="btn-primary btn">Apply coupon</button>
+                    </div>
+                    <div class="table-update d-flex d-xs-block d-lg-flex d-sm-flex justify-content-end">
+                        <button type="button" class="btn-primary btn">Update cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="table-total-wrapper d-flex justify-content-end pt-60 col-md-12 col-sm-12 col-lg-4 float-left  align-items-center">
+                <div class="table-total-content">
+                    <h2 class="pb-20">Cart totals</h2>
+                    <div class="table-total-amount">
+                        <div class="single-total-content d-flex justify-content-between float-left w-100">
+                            <strong>Subtotal</strong>
+                            <span class="c-total-price">@x.totalOfCartShop()</span>
+                        </div>
+                        <div class="single-total-content d-flex justify-content-between float-left w-100">
+                            <strong>Shipping</strong>
+                            <span class="c-total-price"><span></span> FreeShip</span>
+                        </div>
+                        <div class="single-total-content tt-total d-flex justify-content-between float-left w-100">
+                            <strong>VAT 5%</strong>
+                            <span class="c-total-price">@x.VAT()</span>
+                        </div>
+                        <div class="single-total-content tt-total d-flex justify-content-between float-left w-100">
+                            <strong>Total</strong>
+                            <span class="c-total-price">@x.totalCart()</span>
+                        </div>
+                        <a href="@Url.Action("Index","Checkout")" class="btn btn-primary float-left w-100 text-center">Proceed to checkout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

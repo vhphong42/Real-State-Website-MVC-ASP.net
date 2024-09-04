@@ -1,0 +1,169 @@
+﻿@using FashionWebsite.Models
+@{
+    ViewBag.Title = "Index";
+    CartShop x = ViewData["Cart"] as CartShop;
+
+}
+
+<section class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div style="margin-left:44%"class="callout callout-info">
+                    <h5><i class="fas fa-info"></i> TOTAL SUCCESS !</h5>
+                </div>
+
+                <!-- Main content -->
+                <div class="invoice p-3 mb-3">
+                    <!-- title row -->
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>
+                                <i class="fas fa-globe"></i> Victoria
+                                <small class="float-right">@DateTime.Now</small>
+                            </h4>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- info row -->
+                    <div class="row invoice-info">
+                        <div class="col-sm-4 invoice-col">
+                            From
+                            <address>
+                                <strong>Admin, Inc.</strong><br>
+                                80 Duong Quang Ham<br>
+                                Go Vap, Ho Chi Minh<br>
+                                Phone: 0394979004<br>
+                                Email: vohongphong12a4@gmail.com
+                            </address>
+                        </div>
+                        <!-- /.col -->
+
+                        @{
+                            foreach (KhachHang j in Commnon.getKhachHang())
+                            {
+                                                <div class="col-sm-4 invoice-col">
+                                                    To
+                                                    <address>
+                                                        <strong>@j.tenKH</strong><br>
+                                                        @j.diaChi<br>
+                                                        @j.soDT<br>
+                                                        @j.email
+                                                    </address>
+                                                </div>
+                            }
+                        }
+
+                        <!-- /.col -->
+                    @{ 
+                        foreach( DonHang k in Commnon.getDonHang()) 
+                        {
+                            <div class="col-sm-4 invoice-col">
+                                <b>Order ID:</b> @k.soDH<br>
+                                <b>Oder DateTime:</b> @k.ngayGH<br>
+                             </div>
+                        }
+                    }
+
+                        
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                    <!-- Table row -->
+                    <div class="row">
+                        <div class="col-12 table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Qty</th>
+                                        <th>Product ID</th>
+                                        <th>Serial Oder</th>
+                                        <th>Subtotal</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{
+                                        foreach (CtDonHang j in Commnon.getCtDonHang())
+                                        {
+                                            <tr>
+                                                 <td>@j.soLuong</td>
+                                                 <td>@j.maSP</td>
+                                                 <td>@j.soDH</td>
+                                                 <td>@j.giaBan</td>
+                                            </tr>
+                                        }
+
+
+}
+                                    
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+
+                    <div class="row">
+                        <!-- accepted payments column -->
+                        <div class="col-6">
+                            <p class="lead">Payment Methods:</p>
+                            <img src="~/Content/img/credit/visa.png" alt="Visa">
+                            <img src="~/Content/img/credit/mastercard.png" alt="Mastercard">
+                            <img src="~/Content/img/credit/american-express.png" alt="American Express">
+                            <img src="~/Content/img/credit/paypal2.png" alt="Paypal">
+
+                            <p class="text-muted well well-sm shadow-none" style="margin-top: 10px;">
+                                Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem
+                                plugg
+                                dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra.
+                            </p>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-6">
+                            
+                                <p class="lead">@DateTime.Now</p>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <tr>
+                                            <th style="width:50%">Subtotal:</th>
+                                            <td>@x.totalOfCartShop()</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Tax (5%)</th>
+                                            <td>@x.VAT()</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Shipping:</th>
+                                            <td>Free Ship</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Total:</th>
+                                            <td>@x.totalCart()</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            
+
+
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                    <!-- this row will not appear when printing -->
+                    <div class="row no-print">
+                        <div class="col-12">
+                            <button type="button" class="btn btn-success float-right">
+                                <i class="far fa-credit-card"></i> <a href="@Url.Action("Index","Home")">
+                            Continue With Shop
+                                </a>
+                            </button>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- /.invoice -->
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>

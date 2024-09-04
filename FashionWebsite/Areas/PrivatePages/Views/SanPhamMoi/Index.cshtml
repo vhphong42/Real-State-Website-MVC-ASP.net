@@ -1,0 +1,151 @@
+﻿
+@model FashionWebsite.Models.SanPham
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container-fluid">
+    @using (Html.BeginForm("Index", "SanPhamMoi", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card card-success">
+                <div class="card-header card-success">
+                    <h3 class="card-title">Hình ảnh</h3>
+                </div>
+                <div class="card-body">
+                    <img src="@ViewBag.ddHinh" style="width:300px;height:300px;" id="previewImg" />
+                    <div class="form-group">
+                        <label for="exampleInputFile">File input</label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="file" id="exampleInputFile" name="Image" onchange="previewFile(this);">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-left: 22px" class="form-group">
+                    <label for="exampleInputFile">Kiểm duyệt</label>
+                </div>
+            <div style="margin-left: 22px; margin-bottom : 30px" class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Đã duyệt</label>
+            </div>
+            <!-- /.card-body -->
+        </div>
+
+        </div>
+
+        <!-- left column -->
+        <div class="col-md-8">
+            <!-- general form elements -->
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">Thông tin chính</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>Tên sản phẩm </label>
+                        @Html.TextBoxFor(m => m.tenSP, new { @class = "form-control", @placeholder = "Enter ..." })
+                    </div>
+                    <div class="form-group">
+                        <label> Nội dung tóm tắt</label>
+                        @Html.TextAreaFor(m => m.ndTomTat, new { @class = "form-control", @placeholder = "Enter ...", @rows = "3" })
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <!-- textarea -->
+                            <div class="form-group">
+                                <label>Giá bán</label>
+                                @Html.TextBoxFor(m => m.giaBan, new { @class = "form-control", @placeholder = "Enter ..." })
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <!-- textarea -->
+                            <div class="form-group">
+                                <label>Đơn vị tính</label>
+                                @Html.TextBoxFor(m => m.dvt, new { @class = "form-control", @placeholder = "Enter ..." })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label> Thông tin khuyến mãi</label>
+                        @Html.TextAreaFor(m => m.ndTomTat, new { @class = "form-control", @placeholder = "Enter ...", @rows = "3" })
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <!-- textarea -->
+                            <div class="form-group">
+                                <label>Ngày đăng</label>
+                                @Html.TextBoxFor(m => m.ngayDang, new { @class = "form-control", @placeholder = "Enter ..." })
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label>Số Tài Khoản</label>
+                                @Html.TextBoxFor(m => m.taiKhoan, new { @class = "form-control", @placeholder = "Enter ..." })
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label>Mã loại</label>
+                                @Html.TextBoxFor(m => m.maLoai, new { @class = "form-control", @placeholder = "Enter ..." })
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                
+            </div>
+
+        </div>
+        <!-- right columm-->
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">Nội dung</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <div class="card-footer">
+                <div class="form-group">
+                    <div class="form-group">
+                        <label> Nội dung bài viết</label>
+                        @Html.TextAreaFor(m => m.noiDung, new { @class = "form-control", @placeholder = "Enter ...", @id = "ndbaiviet" })
+
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Đăng bài</button>
+
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+    }
+</div>
+
+<script src="https://cdn.tiny.cloud/1/qfbdmc71qbbd4zqgskbinyq74qcg4fkyelrmceidudiilxia/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+    tinymce.init({
+        selector: 'textarea#ndbaiviet',
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect',
+        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+        tinycomments_mode: 'embedded',
+        tinycomments_author: 'Author name',
+        mergetags_list: [
+            { value: 'First.Name', title: 'First Name' },
+            { value: 'Email', title: 'Email' },
+        ]
+    });
+</script>
+
+
+

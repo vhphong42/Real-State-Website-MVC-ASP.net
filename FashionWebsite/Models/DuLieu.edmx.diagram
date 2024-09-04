@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c059a2de198c4102a0353f70015f9296" Name="Diagram1" ZoomLevel="57">
+        <EntityTypeShape EntityType="ShopOnline_DemoModel.BaiViet" Width="1.5" PointX="3.25" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopOnline_DemoModel.CtDonHang" Width="1.5" PointX="6.625" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopOnline_DemoModel.DonHang" Width="1.5" PointX="6.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopOnline_DemoModel.KhachHang" Width="1.5" PointX="11.125" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopOnline_DemoModel.LoaiSP" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopOnline_DemoModel.SanPham" Width="1.5" PointX="3.125" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopOnline_DemoModel.sysdiagram" Width="1.5" PointX="9.875" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopOnline_DemoModel.TaiKhoan" Width="1.5" PointX="3.25" PointY="6.75" IsExpanded="true" />
+        <AssociationConnector Association="ShopOnline_DemoModel.FK__BaiViet__taiKhoa__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopOnline_DemoModel.FK__CtDonHang__maSP__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopOnline_DemoModel.FK__CtDonHang__soDH__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopOnline_DemoModel.FK__DonHang__maKH__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopOnline_DemoModel.FK__DonHang__taiKhoa__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopOnline_DemoModel.FK__SanPham__maLoai__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopOnline_DemoModel.FK__SanPham__taiKhoa__36B12243" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ShopOnline_DemoModel.User" Width="1.5" PointX="12.5" PointY="2.125" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

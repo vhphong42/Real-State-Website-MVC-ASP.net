@@ -1,0 +1,213 @@
+﻿@model FashionWebsite.Models.KhachHang
+@using FashionWebsite.Models
+@{
+    ViewBag.Title = "Index";
+    CartShop x = ViewData["Cart"] as CartShop;
+
+}
+
+<div class="checkout-inner float-left w-100">
+    <div class="container">
+        <div class="row">
+            <div class="cart-block-left col-md-6 order-md-2 mb-6">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span>Your cart</span>
+                </h4>
+                <div class="list-group mb-3">
+                    <div class="table-total-content">
+                        <div class="table-total-amount">
+                            <div class="single-total-content d-flex justify-content-between float-left w-100">
+                                <strong>Subtotal</strong>
+                                <span class="c-total-price">@x.totalOfCartShop()</span>
+                            </div>
+                            <div class="single-total-content d-flex justify-content-between float-left w-100">
+                                <strong>Shipping</strong>
+                                <span class="c-total-price"><span>Flat Rate:</span> FreeShip</span>
+                            </div>
+                            <div class="single-total-content tt-total d-flex justify-content-between float-left w-100">
+                                <strong>VAT 5%</strong>
+                                <span class="c-total-price">@x.VAT()</span>
+                            </div>
+                            <div class="single-total-content tt-total d-flex justify-content-between float-left w-100">
+                                <strong>Total</strong>
+                                <span class="c-total-price">@x.totalCart()</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-group-item  justify-content-between">
+                        <div class="custom-control custom-radio" id="checkbox-card">
+                            <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" required="">
+                            <label class="custom-control-label" for="credit">Credit card</label>
+                        </div>
+                        <div class="custom-control custom-radio" id="checkbox-card-debit">
+                            <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required="">
+                            <label class="custom-control-label" for="debit">Debit card</label>
+                        </div>
+                        <div class="custom-control custom-radio" id="checkbox-card-paypal">
+                            <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required="">
+                            <label class="custom-control-label" for="paypal">Paypal</label>
+                        </div>
+                    </div>
+                    <div id="card-dropdown">
+                        <div class="list-group-item  justify-content-between">
+                            <div class="col-md-12 mb-3 p-0">
+                                <label for="cc-name">Name on card</label>
+                                <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+                                <small class="text-muted">Full name as displayed on card</small>
+                                <div class="invalid-feedback">
+                                    Name on card is required
+                                </div>
+                            </div>
+                            <div class="col-md-12 p-0">
+                                <label for="cc-number">Credit card number</label>
+                                <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+                                <div class="invalid-feedback">
+                                    Credit card number is required
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="cc-expiration">Expiration</label>
+                                    <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+                                    <div class="invalid-feedback">
+                                        Expiration date required
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="cc-expiration">CVV</label>
+                                    <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+                                    <div class="invalid-feedback">
+                                        Security code required
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="card-dropdown-debit">
+                        <div class="list-group-item  justify-content-between">
+                            <div class="col-md-12 mb-3 p-0">
+                                <label for="cc-name">Name on card</label>
+                                <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+                                <small class="text-muted">Full name as displayed on card</small>
+                                <div class="invalid-feedback">
+                                    Name on card is required
+                                </div>
+                            </div>
+                            <div class="col-md-12 p-0">
+                                <label for="cc-number">Credit card number</label>
+                                <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+                                <div class="invalid-feedback">
+                                    Credit card number is required
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="cc-expiration">Expiration</label>
+                                    <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+                                    <div class="invalid-feedback">
+                                        Expiration date required
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="cc-expiration">CVV</label>
+                                    <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+                                    <div class="invalid-feedback">
+                                        Security code required
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="card-dropdown-paypal">
+                        <div class="list-group-item  justify-content-between">
+                            <div class="image"><img src="~/Content/img/credit/paypal.png"></div>
+                        </div>
+                    </div>
+                    @using (Html.BeginForm("SaveToDataBase", "Checkout", FormMethod.Post))
+                    {
+                    }
+
+                    <!--<form class="card p-2">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Promo code">
+      <div class="input-group-append">
+        <button type="submit" class="btn btn-secondary btn-primary">Redeem</button>
+      </div>
+    </div>
+    </form>-->
+                </div>
+            </div>
+            <div class="cart-block-right col-md-6 order-md-1">
+                <h4 class="mb-3">Billing address</h4>
+                @using (Html.BeginForm("SaveToDataBase", "Checkout", FormMethod.Post))
+                {
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="firstName">Full Name <span class="required">*</span></label>
+                            @Html.TextAreaFor(m => m.tenKH, new { @class = "form-control", @id = "firstName", @placeholder = "", @value = "", @required = "" })
+                            <div class="invalid-feedback">
+                                Valid first name is required.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="lastName">Phone Number <span class="required">*</span></label>
+                            @Html.TextAreaFor(m => m.soDT, new { @class = "form-control", @id = "email", @placeholder = "your phone number" })
+                            <div class="invalid-feedback">
+                                Valid phone number is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="ngaySinh">Birthday <span class="required">*</span></label>
+                            @Html.TextBoxFor(m => m.ngaySinh, new { @class = "form-control", @type="date" })
+                            <div class="invalid-feedback">
+                                Valid Birthday is required.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="firstName">Note <span class="required">*</span></label>
+                            @Html.TextAreaFor(m => m.ghiChu, new { @class = "form-control", @type = "note",@style="height:100px" })
+                            <div class="invalid-feedback">
+                                Valid Note is required.
+                            </div>
+                        </div>
+                    </div>
+
+                        <div class="mb-3">
+                            <label for="email">Email <span class="text-muted">(Optional)</span></label>
+                            @Html.TextAreaFor(m => m.email, new { @class = "form-control", @id = "email", @placeholder = "You@example.com" })
+                            <div class="invalid-feedback">
+                                Please enter a valid email address for shipping updates.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="address">Address<span class="required">*</span> </label>
+                            @Html.TextAreaFor(m => m.diaChi, new { @class = "form-control", @placeholder = "Your Address", @required = "", @id = "address" })
+                            <div class="invalid-feedback">
+                                Please enter your shipping address.
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5 mb-3">
+                                <label class="radio-inline">@Html.RadioButtonFor(m => m.gioiTinh, new { @name = "gioiTinh" }) Nam</label>
+                                <label class="radio-inline">@Html.RadioButton("gioiTinh", false) Nữ </label>
+
+                                <div class="invalid-feedback">
+                                    Please select a valid country.
+                                </div>
+                            </div>
+                            <button style="margin-left: 70%; width: 30%;" class="btn btn-primary btn-lg btn-primary">Total</button>
+
+                        </div>
+                        }
+                        
+                    </div>
+                </div>
+    </div>
+</div>

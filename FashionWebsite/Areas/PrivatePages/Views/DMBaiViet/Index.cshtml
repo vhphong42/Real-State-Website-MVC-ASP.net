@@ -1,0 +1,67 @@
+﻿@using FashionWebsite.Models;
+@{
+    ViewBag.Title = "Index";
+    List<BaiViet> ds = ViewData["DSBV"] as List<BaiViet>;
+}
+<style>
+    form{
+        display :inline
+    }
+</style>
+
+<div class="card-body">
+    <table id="example2" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Tên bài viết</th>
+                <th>Ngày đăng  </th>
+                <th>Tài khoản</th>
+                <th>Số lần đọc</th>
+                <th>Công cụ</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (BaiViet i in ds)
+                {
+                    <tr>
+                        <td>
+                            @i.tenBV
+                        </td>
+                        <td>@string.Format("{0: hh:mm [dd/MM/yyyy]}",i.ngayDang)</td>
+                        <td> @i.TaiKhoan1.hoDem @i.TaiKhoan1.tenTV</td>
+                        <td>@i.soLanDoc</td>
+
+                        <td>
+                            @using (Html.BeginForm("Active", "DMBaiViet", FormMethod.Post))
+                            {
+                                <button class="btn btn-danger" title="Kiểm duyệt bài viết..."> @ViewBag.tdCuaNut</button>
+                                <input type="hidden" name="maBaiViet" value="@i.maBV" />
+
+                            }
+                            <button class="btn btn-default" title="Cho phép chỉnh sửa bài viết..."> Chỉnh sửa</button>
+                            @using (Html.BeginForm("Delete", "DMBaiViet", FormMethod.Post))
+                            {
+                                <button class="btn btn-danger" title="Cho phép xóa trên các trang công khai..."> Xóa </button>
+                                <input type="hidden" name="maBaiViet" value="@i.maBV" />
+                            }
+
+                        </td>
+
+                    </tr>
+                }
+            }
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Rendering engine</th>
+                <th>Browser</th>
+                <th>Platform(s)</th>
+                <th>Engine version</th>
+                <th>CSS grade</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>

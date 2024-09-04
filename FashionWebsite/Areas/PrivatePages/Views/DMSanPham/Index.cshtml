@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@using FashionWebsite.Models;
+<div class="row">
+    <div class="col-12">
+        <div class="card-body">
+            <div class="row">
+                <div class="row mt-4">
+                    @foreach (SanPham i in Commnon.getProductByAdmin())
+                    {
+                    <div class="col-sm-4">
+                        <div class="position-relative">
+                            <img src="@i.hinhDD" alt="Photo 1" class="img-fluid" />
+                            <div class="ribbon-wrapper ribbon-lg">
+                                <div class="ribbon bg-success text-lg">
+                                    20%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
